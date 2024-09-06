@@ -24,7 +24,8 @@ import org.mindrot.jbcrypt.BCrypt;
  * @author c3rea
  */
 public class RegisterInterfaceImp extends UnicastRemoteObject implements RegisterInterface  {
-    
+    String url = "jdbc:mysql://your_server_ip:3306/pongusers";
+
     public RegisterInterfaceImp() throws RemoteException{   
         super();
     }
@@ -54,7 +55,7 @@ public class RegisterInterfaceImp extends UnicastRemoteObject implements Registe
     @Override
     public String insert(String GamerTag, String Fname, String Lname, String Email,String password) throws RemoteException {
         try {
-             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pongusers", "appuser", "");
+             Connection con = DriverManager.getConnection(url, "appuser", "");
             Statement St = (Statement)con.createStatement();
              String hashedpassword = BCrypt.hashpw(password, BCrypt.gensalt()); //hashinf pq // read more
 
@@ -142,7 +143,7 @@ public class RegisterInterfaceImp extends UnicastRemoteObject implements Registe
         String sql = "SELECT password FROM pongapplication WHERE gamerTag = ?";
         String gamerTag;
         try {
-         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pongusers", "appuser", "");
+         Connection con = DriverManager.getConnection(url, "appuser", "");
             Statement St = (Statement)con.createStatement();
          PreparedStatement pstmt = con.prepareStatement(sql);
          pstmt.setString(1, GamerTag);

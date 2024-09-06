@@ -224,10 +224,7 @@ public class Register extends javax.swing.JFrame {
 
     private void btn_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createActionPerformed
         try {
-                      
             
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pongusers", "appuser", "");
-            Statement St = (Statement)con.createStatement();
             String GamerTag = txt_tag.getText();
             String Fname = txt_Fname.getText();
             String Lname = txt_Lname.getText();
@@ -241,7 +238,7 @@ public class Register extends javax.swing.JFrame {
         }
             
           // Look up the remote object in the RMI registry
-    RegisterInterface R1 = (RegisterInterface) Naming.lookup("rmi://192.168.215.220:1099/RegisterInterface");
+            RegisterInterface R1 = (RegisterInterface) Naming.lookup("rmi://192.168.215.220:1099/RegisterInterface");
             String result = R1.insert(GamerTag, Fname, Lname, Email,Plainpassword);
             JOptionPane.showMessageDialog(null, result,"success",JOptionPane.INFORMATION_MESSAGE);
             btn_Lreidrect.setVisible(true);
