@@ -15,10 +15,10 @@ import java.util.ArrayList;
 */
 
 public interface RegisterInterface extends Remote {
-    public String delete(int id) throws RemoteException;
+//    public String delete(int id) throws RemoteException;
     public String insert(String GamerTag,String Fname,String Lname, String Email,String Plainpassword) throws RemoteException;
-    public String update(int id,String Fname,String Lname, String Email) throws RemoteException;
-    public ArrayList search(int id) throws RemoteException;
+//    public String update(int id,String Fname,String Lname, String Email) throws RemoteException;
+//    public ArrayList search(int id) throws RemoteException;
     public boolean Login (String GamerTag,String password) throws RemoteException;
  
 }
