@@ -144,7 +144,7 @@ try {
     String password = new String(passchars); // Convert the password character array to a string
 
     // Look up the remote object in the RMI registry
-    RegisterInterface R1 = (RegisterInterface) Naming.lookup("rmi://192.168.215.220:1099/RegisterInterface");
+    RegisterInterface R1 = (RegisterInterface) Naming.lookup("rmi://192.168.108.220:1099/RegisterInterface");
 
     // Call the remote Login method
     isAuthenticated = R1.Login(GamerTag, password);

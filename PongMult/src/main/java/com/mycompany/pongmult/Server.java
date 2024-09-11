@@ -21,7 +21,7 @@ public class Server {
     public static void main(String [] args) throws RemoteException{
       try {
             // Set the system property for RMI server hostname
-            String serverIP = "192.168.215.220"; // Replace with the server's LAN IP address
+            String serverIP = "192.168.108.220"; // Replace with the server's LAN IP address
             System.setProperty("java.rmi.server.hostname", serverIP);
 
             // Create and bind the remote object
