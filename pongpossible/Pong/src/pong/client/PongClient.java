@@ -160,7 +160,7 @@ public class PongClient implements KeyListener {
     public static void main(String[] args) {
         try {
             IServer remoteServer = (IServer) Naming.lookup("rmi://192.168.108.220:1099/RegisterInterface");
-            int playerID = 1; // Set this to 1 or 2 based on which player this client is
+            int playerID = 2; // Set this to 1 or 2 based on which player this client is
             new PongClient(remoteServer, playerID);
         } catch (Exception ex) {
             ex.printStackTrace();
